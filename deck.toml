@@ -1,0 +1,19 @@
+[package]
+name = "@deckyard/magick"
+version = "0.1.0"
+description = "Image processing through the ImageMagick 7 command line: resize, crop, convert, annotate, compare, with safe defaults"
+license = "LGPL-3.0-only"
+authors = ["mplx <mplx@jennifer-lang.dev>"]
+# The deck runs the ImageMagick 7 `magick` program, so it needs `exec`.
+# No `net`: ImageMagick is never given a URL. No `sql`.
+capabilities = ["exec"]
+keywords = ["imagemagick", "image", "thumbnail", "resize", "convert", "webp", "graphics"]
+
+[package.urls]
+deck = "https://raw.githubusercontent.com/deckyard/deck-magick/main/deck.toml"
+homepage = "https://github.com/deckyard/deck-magick"
+manual = "https://deckyard.github.io/deck-magick/"
+
+# Only the default binary: `jennifer-tiny` has no `exec` capability.
+[engines]
+jennifer = ">=0.25.0"
