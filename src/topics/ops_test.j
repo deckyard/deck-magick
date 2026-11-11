@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: LGPL-3.0-only
 # SPDX-FileCopyrightText: Copyright (C) 2026 mplx <mplx@jennifer-lang.dev>
-# pragma-jennifer-version: >=0.25.0
+# pragma-jennifer-version: >=0.26.0
 
 # magick - white-box tests for the ops topic. Spliced into magick_test.j via
 # include.
@@ -41,7 +41,7 @@ func fileText() {
 func bytesOverlay() {
     overlay(
         photo(),
-        fromBytes(config(), convert.bytesFromString("x", "utf-8"), "PNG"),
+        fromBytes(config(), convert.bytesFromString("utf-8", "x"), "PNG"),
         "Center",
         0,
         0);
@@ -56,7 +56,7 @@ func hugeSharpen() {
 }
 
 func emptyBytes() {
-    fromBytes(config(), convert.bytesFromString("", "utf-8"), "PNG");
+    fromBytes(config(), convert.bytesFromString("utf-8", ""), "PNG");
 }
 
 func testOperationsBuildArguments() {
@@ -152,7 +152,7 @@ func testBadArgumentsAreRefused() {
 }
 
 func testBytesGoThroughAFile() {
-    def img as Image init fromBytes(config(), convert.bytesFromString("PNG data", "utf-8"), "png");
+    def img as Image init fromBytes(config(), convert.bytesFromString("utf-8", "PNG data"), "png");
     testing.assertEqual($img.input, "PNG:-");
     testing.assertEqual($img.fromBytes, true);
     def text as Image init annotate(strip($img), "PNG:-", "Center", 0, 0, 12, "white");
