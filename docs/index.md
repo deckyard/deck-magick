@@ -43,7 +43,7 @@ Every failure is `Error{kind: "magick"}`:
 
 ## Requirements
 
-Jennifer 0.25.0 or newer, default `jennifer` binary: the deck needs the
+Jennifer 0.26.0 or newer, default `jennifer` binary: the deck needs the
 `exec` capability, which `jennifer-tiny` lacks. ImageMagick 7 (the `magick`
 program; ImageMagick 6's `convert` is not supported) on the `PATH`, or named
 with `withBinary`. Formats beyond the built-in ones need ImageMagick's
