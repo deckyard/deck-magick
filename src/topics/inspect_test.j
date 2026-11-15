@@ -130,7 +130,7 @@ func testRunawayCommandsAreStopped() {
         run($c, ["-size", "6000x6000", "plasma:", "-blur", "0x40", "-blur", "0x40", "null:"]);
         missed("a long command finished within a second");
     } catch (e) {
-        testing.assertEqual($e.kind, ERROR_KIND);
+        testing.assertEqual($e.kind, "timeout");
     }
     testing.assertTrue(time.milliseconds(time.sub(time.now(), $started)) < 8000);
     try {
@@ -205,6 +205,7 @@ func testBytesInputIsKilledToo() {
         encode($c, $img, "PNG");
         missed("a long command from bytes finished within a second");
     } catch (e) {
+        testing.assertEqual($e.kind, "timeout");
         testing.assertTrue(strings.contains($e.message, "killed after 1000 ms"));
     }
     testing.assertTrue(time.milliseconds(time.sub(time.now(), $started)) < 8000);

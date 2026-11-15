@@ -63,6 +63,19 @@ func paint(dir as string, name as string, size as string, fill as string) {
     testing.assertEqual($r.exitCode, 0);
 }
 
+# A command past its timeout is killed and raises kind "timeout". `sleep`
+# stands in for a hanging magick, so this runs without ImageMagick too.
+func testACommandPastItsTimeoutIsKindTimeout() {
+    def c as Config init withTimeout(config(), 1000);
+    try {
+        execute($c, ["sleep", "5"], "sleep");
+        missed("a hanging command");
+    } catch (e) {
+        testing.assertEqual($e.kind, "timeout");
+        testing.assertEqual($e.message, "magick: sleep: killed after 1000 ms");
+    }
+}
+
 func testFileNamesAreChecked() {
     testing.assertEqual(refusal("photo.png"), "");
     testing.assertEqual(refusal("/srv/up/IMG_0001.JPG"), "");

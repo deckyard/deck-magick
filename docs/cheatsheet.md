@@ -10,14 +10,15 @@ Every export of `@deckyard/magick`. Guides are listed in
 import "@deckyard/magick/" as magick;
 ```
 
-Every failure is `Error{kind: "magick"}`. A `c` argument is a `Config`, an
+Every failure is `Error{kind: "magick"}`, except a command killed at its timeout
+(kind `"timeout"`). A `c` argument is a `Config`, an
 `img` an `Image`.
 
 ## Constants
 
 | Constant | Value | Meaning |
 |---|---|---|
-| `ERROR_KIND` | `"magick"` | the `kind` of every error the deck throws |
+| `ERROR_KIND` | `"magick"` | the `kind` of the deck's own errors |
 
 ## Types
 

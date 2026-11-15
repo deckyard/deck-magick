@@ -17,7 +17,8 @@
  * may be read or written, and the default set leaves out SVG, PDF,
  * PostScript and the script formats. Every command carries memory, disk,
  * size and time limits, and is killed when it runs too long. Every failure
- * is `Error{kind: "magick"}`.
+ * is `Error{kind: "magick"}`, except a command killed at its timeout, which
+ * is kind `"timeout"`.
  *
  * | topic | covers |
  * | --- | --- |

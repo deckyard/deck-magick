@@ -6,7 +6,7 @@
 # the resource limits, and running the `magick` program. Spliced into
 # magick.j via include.
 
-/** The `kind` of every error the deck throws. */
+/** The `kind` of the deck's own errors (a command killed at its timeout is `"timeout"`). */
 export def const ERROR_KIND as string init "magick";
 
 /**
@@ -40,6 +40,17 @@ export def struct Config {
  */
 func fail(message as string) {
     throw Error{kind: ERROR_KIND, message: "magick: " + $message};
+}
+
+/**
+ * Raise a command killed at its deadline: kind `"timeout"`, the message as
+ * `fail` writes it.
+ *
+ * @param message {string} what went wrong
+ * @throws {Error} always, with `kind` `"timeout"`
+ */
+func failTimeout(message as string) {
+    throw Error{kind: "timeout", message: "magick: " + $message};
 }
 
 /**
@@ -382,7 +393,8 @@ func commandLine(c as Config, tool as string, args as list of string) {
  * @param argv {list of string} the command line
  * @param what {string} the operation, for error messages
  * @return {os.Result} the exit code and output
- * @throws {Error} kind `"magick"` when the program cannot start or runs too long
+ * @throws {Error} kind `"magick"` when the program cannot start; kind
+ *   `"timeout"` when it runs past `timeoutMs` and is killed
  */
 func execute(c as Config, argv as list of string, what as string) {
     def p as os.Process init start($c, $argv);
@@ -393,7 +405,7 @@ func execute(c as Config, argv as list of string, what as string) {
             os.kill($p);
             os.wait($p);
             os.release($p);
-            fail($what + ": killed after " + convert.toString($c.timeoutMs) + " ms");
+            failTimeout($what + ": killed after " + convert.toString($c.timeoutMs) + " ms");
         }
         time.sleep(time.fromMilliseconds($pause));
         if ($pause < 20) {

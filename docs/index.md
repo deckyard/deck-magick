@@ -32,13 +32,16 @@ nothing runs until `write`, `writeAs` or `encode`.
 
 ## Errors
 
-Every failure is `Error{kind: "magick"}`:
+Every failure is `Error{kind: "magick"}`, except a command the deck kills at
+its timeout, which is kind `"timeout"`:
 
 - a refused file name or format, a bad size, colour or gravity, before
   anything runs;
 - ImageMagick's own error, its first line:
   `magick: write out.png: magick: improper image header 'evil.png' @ error/png.c/ReadPNGImage/3956.`;
-- a limit: `width or height exceeds limit`, or `killed after 60000 ms`;
+- one of ImageMagick's `-limit` refusals: `width or height exceeds limit`;
+- a command killed at its timeout, kind `"timeout"`:
+  `magick: write out.png: killed after 60000 ms`;
 - a missing program: `cannot run magick (is ImageMagick 7 installed?)`.
 
 ## Requirements
