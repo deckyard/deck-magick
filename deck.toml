@@ -1,6 +1,6 @@
 [package]
 name = "@deckyard/magick"
-version = "0.1.0"
+version = "0.2.0"
 description = "Image processing through the ImageMagick 7 command line: resize, crop, convert, annotate, compare, with safe defaults"
 license = "LGPL-3.0-only"
 authors = ["mplx <mplx@jennifer-lang.dev>"]
