@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: LGPL-3.0-only
 # SPDX-FileCopyrightText: Copyright (C) 2026 mplx <mplx@jennifer-lang.dev>
-# pragma-jennifer-version: >=0.26.0
+# pragma-jennifer-version: >=0.27.0
 
 # magick - the configuration, the checks every file name and argument passes,
 # the resource limits, and running the `magick` program. Spliced into
@@ -225,7 +225,7 @@ func coderFor(path as string) {
     if ($dot < 0 or $dot < $slash) {
         return "";
     }
-    def ext as string init strings.lower(strings.substring($path, $dot + 1));
+    def ext as string init strings.lower($path[$dot + 1..]);
     def coders as map of string to string init {
         "png": "PNG",
         "jpg": "JPEG",

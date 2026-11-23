@@ -122,5 +122,6 @@ trusted callers only.
 
 ## Dependencies on the interpreter
 
-- Floor `>=0.26.0`, the default binary only (`exec` through `os.spawn`,
-  `os.poll` and `os.kill`).
+- Floor `>=0.27.0`, the default binary only (`exec` through `os.spawn`,
+  `os.poll` and `os.kill`). The tests use the UTF-8 codec of
+  `encoding.encode`, new in 0.27.0.

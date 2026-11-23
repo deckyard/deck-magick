@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: LGPL-3.0-only
 # SPDX-FileCopyrightText: Copyright (C) 2026 mplx <mplx@jennifer-lang.dev>
-# pragma-jennifer-version: >=0.26.0
+# pragma-jennifer-version: >=0.27.0
 
 # magick - white-box tests for the core topic, and the helpers the live
 # tests share. Spliced into magick_test.j via include.
@@ -152,9 +152,9 @@ func testEveryCommandCarriesTheLimits() {
     def argv as list of string init commandLine($c, "identify", ["PNG:a.png"]);
     testing.assertEqual($argv[0], "magick");
     testing.assertEqual($argv[1], "identify");
-    testing.assertEqual(lists.slice($argv, 2, 5), ["-limit", "memory", "256MiB"]);
+    testing.assertEqual($argv[2..5], ["-limit", "memory", "256MiB"]);
     testing.assertTrue(lists.contains($argv, "area"));
-    testing.assertEqual(lists.slice($argv, len($argv) - 4), ["-limit", "time", "3", "PNG:a.png"]);
+    testing.assertEqual($argv[len($argv) - 4..], ["-limit", "time", "3", "PNG:a.png"]);
 }
 
 func testErrorLines() {

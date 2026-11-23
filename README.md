@@ -38,7 +38,7 @@ io.printf("%dx%d %s\n", $info.width, $info.height, $info.format);
 
 ## Requirements
 
-Jennifer 0.26.0 or newer and the default `jennifer` binary (the deck needs
+Jennifer 0.27.0 or newer and the default `jennifer` binary (the deck needs
 the `exec` capability); ImageMagick 7 (`magick`) on the host.
 
 ## Development
