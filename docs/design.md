@@ -5,7 +5,7 @@
 
 ## Scope
 
-Image processing by running the ImageMagick 7 `magick` program: open an
+Image processing by running the ImageMagick™ 7 `magick` program: open an
 image from a file or bytes, collect operations (resize, crop, rotate, blur,
 sharpen, annotate, overlay and more) in an immutable `Image` builder, then
 write it to a file or encode it to bytes in one `magick` process.
@@ -21,7 +21,7 @@ Not in scope:
   the deck drives the installed program.
 - **Remote images.** ImageMagick is never given a URL, and the deck declares
   no `net` capability.
-- **Vector and document formats by default.** SVG, PDF, PostScript, EPS and
+- **Vector and document formats by default.** SVG, PDF, PostScript™, EPS and
   PSD run external renderers or are scripts in disguise; they need
   `allowFormat`, for trusted files only.
 - **ImageMagick 6.** Only the `magick` entry point of version 7 is driven.
@@ -110,7 +110,7 @@ trusted callers only.
 
 ## Known limitations and open questions
 
-- The timeout kills `magick`, not delegates it started (Ghostscript for PDF
+- The timeout kills `magick`, not delegates it started (Ghostscript™ for PDF
   and PostScript); `-limit time` and a strict `policy.xml` are the backstop.
 - Decoders still parse hostile bytes: pinning stops format confusion, not a
   bug in a codec library. Keep ImageMagick updated and run image work with

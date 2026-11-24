@@ -3,8 +3,8 @@
 
 # Security
 
-ImageMagick reads hundreds of formats, some of which are programs: MVG and
-MSL draw and read other files, SVG and PostScript call external renderers.
+ImageMagick™ reads hundreds of formats, some of which are programs: MVG and
+MSL draw and read other files, SVG and PostScript™ call external renderers.
 A file name can also be an instruction: `@list.txt` reads a list of files,
 `text:/etc/passwd` renders a file as an image, `https://...` fetches one.
 In 2016 this combination became [ImageTragick](https://imagetragick.com/)
@@ -63,7 +63,7 @@ is built so that an image or a file name from a user cannot do any of that.
 ## What it does not do
 
 - **The timeout kills `magick`, not its children.** A delegate such as
-  Ghostscript, which PDF and PostScript need, outlives it; ImageMagick's own
+  Ghostscript™, which PDF and PostScript need, outlives it; ImageMagick's own
   `-limit time` and the delegate policy below are what stop it.
 - **`run` is unchecked.** It passes your arguments as they are, after the
   limits. Never build them from user input.

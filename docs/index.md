@@ -3,7 +3,7 @@
 
 # @deckyard/magick
 
-Image processing through the [ImageMagick 7](https://imagemagick.org/)
+Image processing through the [ImageMagick™ 7](https://imagemagick.org/)
 command line. Open a file or bytes, chain operations, write the result in
 any format ImageMagick supports; `identify`, `compare` and `montage` cover
 the other tools. Each chain runs as one `magick` process.
@@ -52,3 +52,12 @@ program; ImageMagick 6's `convert` is not supported) on the `PATH`, or named
 with `withBinary`. Formats beyond the built-in ones need ImageMagick's
 delegates installed (libheif for HEIC and AVIF, libjxl for JPEG XL).
 `magick -list format` shows what a host can do.
+
+## Trademarks
+
+ImageMagick™ is a trademark of ImageMagick Studio LLC. PostScript™ is a
+trademark of Adobe Inc. Ghostscript™ is a trademark of Artifex Software,
+Inc. Other product and company names may be trademarks of their respective
+owners. They are used only to identify the products this deck works with.
+This deck is an independent project, not affiliated with, sponsored or
+endorsed by ImageMagick Studio LLC, Adobe Inc. or Artifex Software, Inc.

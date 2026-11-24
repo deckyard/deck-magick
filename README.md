@@ -5,7 +5,7 @@
 [![release](https://img.shields.io/github/v/release/deckyard/deck-magick)](https://github.com/deckyard/deck-magick/releases/latest)
 
 Image processing for [Jennifer](https://jennifer-lang.dev/) through the
-[ImageMagick 7](https://imagemagick.org/) command line: resize, crop,
+[ImageMagick™ 7](https://imagemagick.org/) command line: resize, crop,
 thumbnail, rotate, strip metadata, annotate, watermark, convert between
 formats, identify, compare and montage. Built for images and file names you
 do not control: no shell, formats pinned and allow-listed, file names and
@@ -56,5 +56,11 @@ CI's container; run the suite on a machine with ImageMagick 7 before a release.
 
 LGPL-3.0-only, see [LICENSE](LICENSE). Copyright (C) 2026 mplx &lt;mplx@jennifer-lang.dev&gt;.
 
-ImageMagick is a trademark of ImageMagick Studio LLC. This deck is not
-affiliated with or endorsed by it.
+## Trademarks
+
+ImageMagick™ is a trademark of ImageMagick Studio LLC. PostScript™ is a
+trademark of Adobe Inc. Ghostscript™ is a trademark of Artifex Software,
+Inc. Other product and company names may be trademarks of their respective
+owners. They are used only to identify the products this deck works with.
+This deck is an independent project, not affiliated with, sponsored or
+endorsed by ImageMagick Studio LLC, Adobe Inc. or Artifex Software, Inc.

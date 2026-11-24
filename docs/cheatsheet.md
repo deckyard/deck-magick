@@ -26,7 +26,7 @@ Every failure is `Error{kind: "magick"}`, except a command killed at its timeout
 
 | Field | Meaning |
 |---|---|
-| `binary as string` | the ImageMagick 7 program |
+| `binary as string` | the ImageMagick™ 7 program |
 | `formats as list of string` | the coders files may be read and written with |
 | `memory as string` | pixel memory limit, e.g. `256MiB` |
 | `disk as string` | pixel-cache disk limit, e.g. `1GiB` |

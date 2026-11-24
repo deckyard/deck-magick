@@ -14,7 +14,7 @@ def b as magick.Image init magick.openAs($c, "upload.tmp", "PNG");    # named fo
 def u as magick.Image init magick.fromBytes($c, $body, "JPEG");       # bytes, e.g. an HTTP upload
 ```
 
-Bytes reach ImageMagick through a temporary file, removed afterwards, so the
+Bytes reach ImageMagick™ through a temporary file, removed afterwards, so the
 timeout covers them as it covers files; their format is never guessed, so
 name it.
 
